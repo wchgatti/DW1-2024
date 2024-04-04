@@ -13,18 +13,27 @@
         #titulo_principal {
             color: #ff0000;
             text-decoration: underline;
+            background-color: aquamarine;
+            border: 3px solid black;
         }
         
         #segundo_titulo {
             color: blueviolet;
             
         }
-
+        
         .destaque {
             background-color: orangered;
         }
 
+        img {
+            filter: grayscale(100%);
+            image-resolution: 0%;
+        }
 
+        img:hover{
+            filter: grayscale(0%);
+        }
     </style>
 
 </head>
@@ -36,6 +45,11 @@
 
     <h2 id="segundo_titulo">segundo titulo</h2>
 
-    <p id=".destaque">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit nulla ut quis harum odio facilis eos magni amet, a, quo dolor debitis nisi cupiditate eum placeat perferendis explicabo sit at?</p>
+    <p class="destaque">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit nulla ut quis harum odio facilis eos magni amet, a, quo dolor debitis nisi cupiditate eum placeat perferendis explicabo sit at?</p>
+
+    <h3>terceiro titulo</h3>
 </body>
 </html>
+<div>
+    <img src="https://extra.globo.com/incoming/25614129-f59-e3b/w533h800/neymar-vespera-estreia.jpg" alt="">
+</div>
