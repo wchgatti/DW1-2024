@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+        --text: 98vh;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box ;
+        }
+         #artext{
+            background: linear-gradient(to left,yellow,blue, purple, pink, red, orange,yellow);
+            background-clip: text;
+            display: inline;
+            color: transparent;
+            animation: animated 5s linear infinite;
+            font-family: "Poetsen One", sans-serif;
+        }
+        @keyframes animated {
+            to{background-position-x: 161px;}
+        }
+        .artext{
+            text-align: center;
+            line-height: var(--text);
+        }
+   
+    </style>
+</head>
+<body>
+
+    <div class="artext"> <h1 id="artext">
+        Instagram</h1> </div>
+
+</body>
+</html>

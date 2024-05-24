@@ -46,11 +46,21 @@
         .principal ul{
             padding-left: 25px;
         }
+        #artext{
+            background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+            background-clip: text;
+            display: inline;
+            color: transparent;
+            animation: animated 5s linear infinite;
+        }
+        @keyframes animated {
+            to{background-position-x: 161px;}
+        }
     </style>
 
 </head>
 <body>
-    
+<div class="artext">
     <div class="container">
         <div class="cabecalho">
             <p>Cabeçalho</p>
@@ -65,7 +75,7 @@
             <p>Cabeçalho</p>
         </div>
         <div class="principal">
-            <h1>Lista de tarefas</h1>
+            <h1 id="artext">Lista de tarefas</h1>
             <ul>
                 <li>Lista 1</li>
                 <li>Lista 2</li>
@@ -73,7 +83,7 @@
             </ul>
         </div>
     </div>
-
+</div>
 
 </body>
 </html>
