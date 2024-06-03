@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,6 @@
             --cor-5:white;
             --cor-6:red;
             --cor-7:black;
-            --cor-8:white;
         }
         *{
             margin: 0;
@@ -30,7 +29,7 @@
         .palm{
             color: var(--cor-primaria);
             text-align: center;
-            background: linear-gradient(to left, green, white, red );
+            background: linear-gradient(to left, var(--cor-4), var(--cor-5), var(--cor-6) );
         }
         .container{
             width: 100vw;
@@ -39,7 +38,7 @@
         }
         .menu{
             height: 80px;
-            background-color: black;
+            background-color: var(--cor-7);
         }
         .menu ul{
             display: flex;
@@ -50,17 +49,17 @@
         }
         .menu a{
             display: inline-block;
-            border: 1px solid black;
+            border: 1px solid var(--cor-7);
             padding: 25px 15px;
             height: 80px;
-            color: rgb(255, 255, 255);
+            color: var(--cor-5);
             text-decoration: none;
             transition: 1s;
             border-radius: 8px;
         }
         .menu a:hover{
-            background-color: white;
-            color: black;
+            background-color: var(--cor-5);
+            color: var(--cor-7);
             transition: 1s;
         }
         div#camisas{
