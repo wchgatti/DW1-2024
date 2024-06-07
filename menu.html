@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -63,9 +63,10 @@
             transition: 1s;
         }
         div#camisas{
-            background:var(--cor-1);
+            /* background:var(--cor-1); */
             width:  100vw;
             height: 100vh;
+            background-color: var(--cor-5);    
         }
         div#ingressos{
             background:var(--cor-2);
@@ -76,6 +77,12 @@
             background:var(--cor-3);
             width:  100vw;
             height: 100vh;      
+        }
+        img{
+            height: 60vh;
+        }
+        #camisa{
+            display: flex;
         }
     </style>
 </head>
@@ -89,10 +96,20 @@
                 <li><a href="#estadio">Estádio</a></li>
             </ul>
         </div>
-        <div id="camisas">Camisas</div>
+        <div id="camisas">
+            <div id="camisa">
+                <img src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/181243-1000-1000/_0067_777230_01.jpg?v=638418776040430000" alt="">
+                <img src="https://dcdn.mitiendanube.com/stores/002/727/912/products/nova-camisa-palmeiras-reserva-away-branca-gola-polo-verde-celebrnado-110-anos-1936b584fb56c4b62117064450135115-1024-1024.jpg" alt="">
+                <img src="https://static.kapiva.com.br/public/kapiva/imagens/produtos/camisa-palmeiras-puma-i-home-2023-2024-63ff55f24fbf5.png" alt="">
+            </div>
+        </div>
         <div id="ingressos">Ingressos</div>
         <div id="estadio">Estádio</div>
     </div>
 
 </body>
 </html>
+
+<div>
+    <!-- <img src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/181243-1000-1000/_0067_777230_01.jpg?v=638418776040430000" alt=""> -->
+</div>
