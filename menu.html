@@ -14,11 +14,12 @@
             --cor-1: linear-gradient(to right,#40916C,#2D6A4F , #40916C);
             --cor-2: linear-gradient(to right, #95D5B2, #52B788, #2D6A4F);
             --cor-3: linear-gradient(to right, #52B788, #2D6A4F, #081C15);
-            --cor-8: linear-gradient(to right, #081C15, #2D6A4F, #081C15);
             --cor-4: green;
             --cor-5: white;
             --cor-6: red;
             --cor-7: black;
+            --cor-8: linear-gradient(to right, #081C15, #2D6A4F, #081C15);
+            --cor-9: linear-gradient(to right, #2D6A4F, #081C15, #081C15, #2D6A4F);
         }
 
         * {
@@ -36,23 +37,25 @@
         ul.menu li {
             transition: 1s;
         }
-
-        .palm {
-            color: var(--cor-primaria);
-            text-align: center;
-            background: linear-gradient(to left, var(--cor-4), var(--cor-5), var(--cor-6));
-        }
-
+        
         .container {
             width: 100vw;
             height: 100vh;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
+        
         .menu {
             height: 80px;
             width: 100%;
             background-color: var(--cor-7);
+        }
+        
+        .palm {
+            color: var(--cor-primaria);
+            text-align: center;
+            background: linear-gradient(to left, var(--cor-4), var(--cor-5), var(--cor-6));
+            
         }
 
         .menu ul {
@@ -88,10 +91,11 @@
             /* background-color: var(--cor-1);     */
         }
 
-        div#ingressos {
-            background: var(--cor-2);
+        div#escudo {
+            background: var(--cor-9);
             width: 100vw;
             height: 100vh;
+            
         }
 
         div#estadio {
@@ -127,6 +131,33 @@
             font-family: "Kanit", sans-serif;
             font-weight: 800;
         }
+
+        #fixo{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        #fixo img{
+            height: 14vh;
+            transition: 1s;
+        }
+        #fixo:hover{
+            transition: 1s;
+        }
+
+        #escudo img{
+            width: 100vw;
+            object-fit: cover;
+            
+        }
+        #escudo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
     </style>
 </head>
 
@@ -135,8 +166,9 @@
     <div class="container">
         <div class="menu">
             <ul>
+                <img style="height: 80px; height: 80px;" src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2029.png">
                 <li><a href="#camisas">Camisas</a></li>
-                <li><a href="#ingressos">Ingressos</a></li>
+                <li><a href="#escudo">Escudos</a></li>
                 <li><a href="#estadio">Estádio</a></li>
             </ul>
         </div>
@@ -166,8 +198,14 @@
             <!-- <img src="https://static.kapiva.com.br/public/kapiva/imagens/produtos/camisa-palmeiras-puma-i-home-2023-2024-63ff55f24fbf5.png" alt=""> -->
 
         </div>
-        <div id="ingressos">Ingressos</div>
-        <div id="estadio">Estádio</div>
+        <div id="escudo">
+            <div id="escudo"><img src="https://sep-bucket-prod.s3.amazonaws.com/wp-content/uploads/2024/01/evolucao-escudos-historia-palmeiras-2.jpg" alt=""></div>
+        </div>
+        <div id="estadio">
+            <img src="https://www.palmeiras.com.br/wp-content/uploads/2019/08/allianz-parque-1.jpg" alt="">
+        </div>
+        <img src="https://www.palmeiras.com.br/wp-content/uploads/2019/08/allianz-parque-1.jpg" alt="">
+        <div  id="fixo"><a href="#"><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2029.png" alt=""></a></div>
     </div>
 
 </body>
@@ -177,3 +215,9 @@
 <div>
     <!-- <img src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/181243-1000-1000/_0067_777230_01.jpg?v=638418776040430000" alt=""> -->
 </div>
+
+<!-- ALLIANZ PARQUE
+AV. FRANCISCO MATARAZZO, 1705 - ÁGUA BRANCA - SÃO PAULO/SP - CEP 05001-200
+CAPACIDADE: 43.713 PESSOAS EM JOGOS E 55 MIL EM SHOWS
+DIMENSÕES DO CAMPO: 105M X 68M
+www.allianzparque.com.br -->
