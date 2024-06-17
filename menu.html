@@ -8,6 +8,7 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
         :root {
             --cor-primaria: rgb(0, 172, 0);
@@ -132,6 +133,14 @@
             font-weight: 800;
         }
 
+        .pal p1{
+            padding-top: 20px;
+        }
+        
+        .pal img{
+            margin-top: 10px; height: 59vh;
+        }
+
         #fixo{
             position: fixed;
             bottom: 10px;
@@ -157,6 +166,54 @@
             justify-content: center;
         }
 
+        #estadio img{
+            width:100vw ;
+            height: calc(100vh - 6vh);
+            /* position: absolute; */
+        }
+        
+        #estadio h1{
+            font-family: "Roboto Mono", monospace;
+            background-color: #2D6A4F;
+            text-align: center;
+            color: rgb(61, 255, 61);
+            height: 6vh;
+        }
+
+        #inst img{
+            width: 3vw;
+            height: 4vh;
+            position: absolute;
+            
+        }
+
+        #inst{
+            background: linear-gradient(to left,blue, purple, red, orange);
+            background-clip: text;
+            color: transparent;
+            font-family: "Poetsen One", sans-serif;
+            display: flex;
+            align-content: space-around;
+            justify-content: space-around;
+        }
+
+         #face{
+            color: blue;
+            font-family: "Poetsen One", sans-serif;
+            display: flex;
+            align-content: space-around;
+            justify-content: space-around;
+         }
+
+         #twit{
+            color: rgb(63, 63, 255);
+            font-family: "Poetsen One", sans-serif;
+            display: flex;
+            align-content: space-around;
+            justify-content: space-around;
+         }
+          
+
         
     </style>
 </head>
@@ -174,23 +231,19 @@
         </div>
         <div style="display: flex; justify-content: space-around;" id="camisas">
             <div class="pal">
-                <img style="margin-top: 10px; height: 59vh;"
-                    src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/173065-1000-1000/768990_01.png?v=637793966018670000"
-                    alt="">
-                    <p style="padding-top: 20px;">Camisa</p>
+                <img src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/173065-1000-1000/768990_01.png?v=637793966018670000"alt="">
+                    <p class="p1">Camisa</p>
                     <p>R$250,00</p>
             </div>
             <div class="pal">
-                <img src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/172985-1000-1000/768978_01.png?v=637787929018570000"
-                    alt="">
-                    <p style="padding-top: 20px;">Camisa</p>
+                <img src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/172985-1000-1000/768978_01.png?v=637787929018570000" alt="">
+                    <p class="p1">Camisa</p>
                     <p>R$250,00</p>
             </div>
             <!-- <img src="https://www.lojasportfanatics.com.br/cdn/shop/files/Camisa-Palmeiras-verde-Masculina-Edit_800x.png?v=1714584147" alt=""> -->
             <div class="pal">
-                <img src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/175881-1000-1000/774331-01--1-.png?v=638104500461200000"
-                    alt="">
-                    <p style="padding-top: 20px;">Camisa</p>
+                <img src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/175881-1000-1000/774331-01--1-.png?v=638104500461200000"alt="">
+                    <p class="p1">Camisa</p>
                     <p>R$250,00</p>
             </div>
             <!-- <img src="https://lojapalmeiras.vteximg.com.br/arquivos/ids/181243-1000-1000/_0067_777230_01.jpg?v=638418776040430000" alt=""> -->
@@ -202,10 +255,16 @@
             <div id="escudo"><img src="https://sep-bucket-prod.s3.amazonaws.com/wp-content/uploads/2024/01/evolucao-escudos-historia-palmeiras-2.jpg" alt=""></div>
         </div>
         <div id="estadio">
-            <img src="https://www.palmeiras.com.br/wp-content/uploads/2019/08/allianz-parque-1.jpg" alt="">
+            <h1>ALLIANZ PARQUE</h1>
+            <img src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2023%2F0308%2Fr1141394_1296x729_16%2D9.jpg" alt="">
         </div>
-        <img src="https://www.palmeiras.com.br/wp-content/uploads/2019/08/allianz-parque-1.jpg" alt="">
         <div  id="fixo"><a href="#"><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2029.png" alt=""></a></div>
+
+        <div id="inst">
+        <div> <img src="https://png.pngtree.com/png-vector/20230225/ourmid/pngtree-instagram-social-media-icon-png-image_6618438.png" alt=""><h1 id="inst">Instagram</h1></div>
+        <div><h1 id="face">Facebook</h1></div>
+        <div><h1 id="twit">Twitter</h1></div>
+        </div>
     </div>
 
 </body>
