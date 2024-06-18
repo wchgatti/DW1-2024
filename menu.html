@@ -21,6 +21,12 @@
             --cor-7: black;
             --cor-8: linear-gradient(to right, #081C15, #2D6A4F, #081C15);
             --cor-9: linear-gradient(to right, #2D6A4F, #081C15, #081C15, #2D6A4F);
+            --cor-10: blue;
+            --cor-11: purple;
+            --cor-12: rgb(61, 255, 61);
+            --cor-13: #2D6A4F;
+            --cor-14: rgb(104, 104, 255);
+            --cor-15: linear-gradient(to left, blue, purple, red, orange);
         }
 
         * {
@@ -114,7 +120,7 @@
         }
 
         .pal{
-            border:  2px solid black;
+            border:  2px solid var(--cor-7);
             height: 75vh;
             border-radius: 30px;
             background: var(--cor-8);
@@ -133,7 +139,7 @@
             font-weight: 800;
         }
 
-        .pal p1{
+        .p1{
             padding-top: 20px;
         }
         
@@ -174,9 +180,9 @@
         
         #estadio h1{
             font-family: "Roboto Mono", monospace;
-            background-color: #2D6A4F;
+            background-color: var(--cor-13);
             text-align: center;
-            color: rgb(61, 255, 61);
+            color: var(--cor-12);
             height: 6vh;
         }
 
@@ -188,7 +194,7 @@
         }
 
         #inst{
-            background: linear-gradient(to left,blue, purple, red, orange);
+            background: var(--cor-15);
             background-clip: text;
             color: transparent;
             font-family: "Poetsen One", sans-serif;
@@ -197,22 +203,34 @@
             justify-content: space-around;
         }
 
+        #insta{
+            font-family: "Poetsen One", sans-serif;
+            display: flex;
+            align-content: space-around;
+            justify-content: space-around;
+            background-color: black;
+        }
+
          #face{
-            color: blue;
+            color: var(--cor-10);
             font-family: "Poetsen One", sans-serif;
             display: flex;
             align-content: space-around;
             justify-content: space-around;
          }
 
+         #face img{
+            height: 6vh ;
+            width: 3vw ;
+         }
+
          #twit{
-            color: rgb(63, 63, 255);
+            color: var(--cor-14);
             font-family: "Poetsen One", sans-serif;
             display: flex;
             align-content: space-around;
             justify-content: space-around;
-         }
-          
+         }         
 
         
     </style>
@@ -260,10 +278,10 @@
         </div>
         <div  id="fixo"><a href="#"><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2029.png" alt=""></a></div>
 
-        <div id="inst">
-        <div> <img src="https://png.pngtree.com/png-vector/20230225/ourmid/pngtree-instagram-social-media-icon-png-image_6618438.png" alt=""><h1 id="inst">Instagram</h1></div>
-        <div><h1 id="face">Facebook</h1></div>
-        <div><h1 id="twit">Twitter</h1></div>
+        <div id="insta">
+        <div><h1 id="inst"> Instagram</h1></div>
+        <div><h1 id="face"> Facebook</h1></div>
+        <div><h1 id="twit"> Twitter</h1></div>
         </div>
     </div>
 
