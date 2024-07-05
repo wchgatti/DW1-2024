@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Gorjeta</h1>
+    <label for="num">Primeira nota</label>
+    <input type="number" name="num" id="num">
+    <br>
+    <br>
+    <label for="num2">Segunda nota</label>
+    <input type="number" name="num2" id="num2">
+    <br>
+    <br>
+    <label for="num3">terceira nota</label>
+    <input type="number" name="num3" id="num3">
+    <br>
+    <br>
+    <label for="num4">quarta nota</label>
+    <input type="number" name="num4" id="num4">
+    <br>
+    <br>
+    <input type="button" value="Média" onclick="calcular()">
+    <br>
+    <br>
+    <label for="resp">A média é: </label>
+    <span id="resp"></span>
+
+    <script>
+        function calcular(){
+            med = document.getElementById("num").value;
+            med2 = document.getElementById("num2").value;
+            med3 = document.getElementById("num3").value;
+            med4 = document.getElementById("num4").value;
+            let saida = calcularMedia(med, med2, med3, med4);
+            document.getElementById("resp").innerText = saida;
+           }
+
+           function calcularMedia(med, med2, med3, med4){
+            let valor = 0;
+                valor = (med + med2 + med3 + med4) / 4;
+            }
+            return valor;
+        
+
+           
+    </script>
+     
+
+</body>
+</html>

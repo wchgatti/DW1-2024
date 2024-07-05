@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Celsius p/ Fahrenheit</h1>
+    <label for="num">Temperatura Celsius</label>
+    <input type="number" name="num" id="num">
+    <br>
+    <br>
+    <input type="button" value="Sua temperatura Celsius" onclick="calcular()">
+    <br>
+    <br>
+    <label for="resp">Para Fahrenheit fica: </label>
+    <span id="resp"></span>
+
+    <script>
+        function calcular(){
+            celc = document.getElementById("num").value;
+            let saida = calcularMult(celc);
+            document.getElementById("resp").innerText = saida;
+           }
+
+           function calcularMult(celc){
+            let valor = 0;
+            for (let i = 0; i< celc.length; i++){
+                valor = celc * 1.8 + 32;
+
+            }
+
+            return valor;
+
+           }
+    </script>
+     
+
+</body>
+</html>

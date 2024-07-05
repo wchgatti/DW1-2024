@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Distância de dois pontos</h1>
+    <label for="pont">Ponto x1</label>
+    <input type="number" name="pont" id="pont">
+    <br>
+    <br>
+    <label for="pont">Ponto y1</label>
+    <input type="number" name="pont" id="pont">
+    <br>
+    <br>
+    <label for="pont">Ponto x2</label>
+    <input type="number" name="pont" id="pont">
+    <br>
+    <br>
+    <label for="pont">Ponto y2</label>
+    <input type="number" name="pont" id="pont">
+    <br>
+    <br>
+    <input type="button" value="A distância é de" onclick="calcular()">
+    <br>
+    <br>
+    <label for="resp">Sua distância: </label>
+    <span id="resp"></span>
+
+    <script>
+        function calcular(){
+            ponto = document.getElementById("pont").value;
+            let saida = calcularMult(ponto);
+            document.getElementById("resp").innerText = saida;
+           }
+
+           function calcularMult(ponto){
+            let valor = 0;
+            for (let i = 0; i< ponto.length; i++){
+                valor = (ponto[i] - ponto[i]) **2;
+
+            }
+
+        //    function calcularMult(ponto){
+        //     let valor2 = 0;
+        //     for (let i = 0; i< ponto.length; i++){
+        //         valor2 = (ponto[i] - ponto[i]) **2;
+
+        //     }
+        //     }
+
+        //    function calcularMult(ponto){
+        //     let valor = 0;
+        //     for (let i = 0; i< ponto.length; i++){
+        //         valor = ponto;
+
+        //     }
+        //     }
+            
+            return valor;
+
+           }
+    </script>
+     
+
+</body>
+</html>
