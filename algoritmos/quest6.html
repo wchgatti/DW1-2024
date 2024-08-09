@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <h1>Gorjeta</h1>
+    <h1>media notas</h1>
     <label for="num">Primeira nota</label>
     <input type="number" name="num" id="num">
     <br>
@@ -32,21 +32,19 @@
 
     <script>
         function calcular(){
-            med = document.getElementById("num").value;
-            med2 = document.getElementById("num2").value;
-            med3 = document.getElementById("num3").value;
-            med4 = document.getElementById("num4").value;
-            let saida = calcularMedia(med, med2, med3, med4);
+            med1 = parseFloat(document.getElementById("num").value);
+            med2 = parseFloat(document.getElementById("num2").value);
+            med3 = parseFloat(document.getElementById("num3").value);
+            med4 = parseFloat(document.getElementById("num4").value);
+            let saida = calcularMedia(med1, med2, med3, med4);
             document.getElementById("resp").innerText = saida;
            }
 
-           function calcularMedia(med, med2, med3, med4){
-            let valor = 0;
-                valor = (med + med2 + med3 + med4) / 4;
-            }
-            return valor;
-        
-
+           function calcularMedia(med1, med2, med3, med4) {
+            let media = 0;
+            media = (med1 + med2 + med3 + med4) / 4;
+            return media;
+           }
            
     </script>
      

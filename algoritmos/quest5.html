@@ -12,16 +12,16 @@
     <input type="number" name="pont" id="pont">
     <br>
     <br>
-    <label for="pont">Ponto y1</label>
-    <input type="number" name="pont" id="pont">
+    <label for="pont2">Ponto y1</label>
+    <input type="number" name="pont2" id="pont2">
     <br>
     <br>
-    <label for="pont">Ponto x2</label>
-    <input type="number" name="pont" id="pont">
+    <label for="pont3">Ponto x2</label>
+    <input type="number" name="pont3" id="pont3">
     <br>
     <br>
-    <label for="pont">Ponto y2</label>
-    <input type="number" name="pont" id="pont">
+    <label for="pont4">Ponto y2</label>
+    <input type="number" name="pont4" id="pont4">
     <br>
     <br>
     <input type="button" value="A distância é de" onclick="calcular()">
@@ -32,37 +32,22 @@
 
     <script>
         function calcular(){
-            ponto = document.getElementById("pont").value;
-            let saida = calcularMult(ponto);
+            x1 = PerseFloat (document.getElementById("pont").value);
+            y1 = PerseFloat (document.getElementById("pont2").value);
+            x2 = PerseFloat (document.getElementById("pont3").value);
+            y2 = PerseFloat (document.getElementById("pont4").value);
+            let saida = calcularMult(x1, y1, x2, y2);
             document.getElementById("resp").innerText = saida;
            }
 
-           function calcularMult(ponto){
-            let valor = 0;
-            for (let i = 0; i< ponto.length; i++){
-                valor = (ponto[i] - ponto[i]) **2;
-
+           function calcularMult(x1, y1, x2, y2){
+            let point = 0;
+            valor = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2));
+            return point;
             }
+               
 
-        //    function calcularMult(ponto){
-        //     let valor2 = 0;
-        //     for (let i = 0; i< ponto.length; i++){
-        //         valor2 = (ponto[i] - ponto[i]) **2;
-
-        //     }
-        //     }
-
-        //    function calcularMult(ponto){
-        //     let valor = 0;
-        //     for (let i = 0; i< ponto.length; i++){
-        //         valor = ponto;
-
-        //     }
-        //     }
             
-            return valor;
-
-           }
     </script>
      
 
