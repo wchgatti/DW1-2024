@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calcular se é ano Bissexto</title>
 </head>
+
 <body>
-    
-    <h1>Ano bissexto</h1>
-    <label for="num">Digite o ano:</label>
-    <input type="number" name="num" id="num">
+    <label for="inputAno">Informe um ano</label>
+    <input type="number" name="inputAno" id="inputAno">
+
     <br>
     <br>
-    <input type="button" value="Seu ano " onclick="calcular()">
+    <input type="button" value="Verificar" onclick="verificar()">
     <br>
     <br>
-    <label for="resp">P: </label>
-    <span id="resp"></span>
+    <label for="resp">Resposta</label>
+    <div id="resp"></div>
 
     <script>
-        function calcular(){
-            celc = document.getElementById("num").value;
-            let saida = calcularMult(ano);
-            document.getElementById("resp").innerText = saida;
-           }
+        function verificar() {
+            let ano = parseInt(document.getElementById("inputAno").value);
+            let resp;
+            if (ano % 4 == 0) {
+                resp = "True";
+            } else {
+                resp = "False";
+            }
+            document.getElementById("resp").innerText = resp;
+        }
 
-           function calcularMult(ano){
-            let valor = 0;
-            valor = valor/4
-           }
-
-           
     </script>
-
 </body>
+
 </html>
