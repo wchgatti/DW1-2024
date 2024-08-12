@@ -32,17 +32,17 @@
 
     <script>
         function calcular(){
-            x1 = PerseFloat (document.getElementById("pont").value);
-            y1 = PerseFloat (document.getElementById("pont2").value);
-            x2 = PerseFloat (document.getElementById("pont3").value);
-            y2 = PerseFloat (document.getElementById("pont4").value);
+            x1 = document.getElementById("pont").value;
+            y1 = document.getElementById("pont2").value;
+            x2 = document.getElementById("pont3").value;
+            y2 = document.getElementById("pont4").value;
             let saida = calcularMult(x1, y1, x2, y2);
             document.getElementById("resp").innerText = saida;
            }
 
-           function calcularMult(x1, y1, x2, y2){
+           function calcularMult(x1, y1, x2, y2) {
             let point = 0;
-            valor = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2));
+            point = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2))
             return point;
             }
                
