@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Gorjeta</h1>
+    <label for="num">Valor da conta</label>
+    <input type="number" name="num" id="num">
+    <br>
+    <br>
+    <input type="button" value="Valor da gorjeta é" onclick="calcular()">
+    <br>
+    <br>
+    <label for="resp">A gorjeta é de: </label>
+    <span id="resp"></span>
+
+    <script>
+        function calcular(){
+            porc = document.getElementById("num").value;
+            let saida = calcularMult(porc);
+            document.getElementById("resp").innerText = saida;
+           }
+
+           function calcularMult(porc){
+            let valor = 0;
+            for (let i = 0; i< porc.length; i++){
+                valor = porc * 0.1;
+
+            }
+
+            return valor;
+
+           }
+    </script>
+     
+
+</body>
+</html>

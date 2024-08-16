@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Conta</h1>
+    <label for="num">Valor da conta</label>
+    <input type="number" name="num" id="num">
+    <br>
+    <br>
+    <input type="button" value="Valor com desconto/acréscimo" onclick="calcular()">
+    <br>
+    <br>
+    <label for="resp">Com desconto fica: </label>
+    <span id="resp"></span>
+
+    <br>
+    <br>
+    <label for="resp2">Com acréscimo fica: </label>
+    <span id="resp2"></span>
+
+    <script>
+        function calcular(){
+            valor = parseFloat(document.getElementById("num").value);
+            let saida = calcularDesc(valor);
+            let saida2 = calcularAcre(valor);
+            document.getElementById("resp").innerText = saida;
+            document.getElementById("resp2").innerText = saida2;
+           }
+
+           function calcularDesc(valor){
+            let resp = 0;
+            let porce = 0.95;
+            resp = valor * porce;
+            let desconto = resp;
+            return desconto;
+
+           }
+
+           function calcularAcre(valor){
+            let resp2 = 0;
+            let porce = 1.05;
+            resp2 = valor * porce;
+            let acrescimo = resp2;
+            return acrescimo; 
+        }
+            
+    </script>
+     
+
+</body>
+</html>

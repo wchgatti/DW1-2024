@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Soma dos números</h1>
+    <label for="num">Seu número</label>
+    <input type="number" name="num" id="num">
+    <br>
+    <br>
+    <input type="button" value="Somar os números" onclick="calcular()">
+    <br>
+    <br>
+    <label for="resp">A soma é: </label>
+    <span id="resp"></span>
+
+    <script>
+        function calcular(){
+            soma = document.getElementById("num").value;
+            let saida = calcularMult(soma);
+            document.getElementById("resp").innerText = saida;
+           }
+
+           function calcularMult(soma){
+            let valor = 0;
+            for (let i = 1; i<= soma; i++){
+                valor += i;
+                }
+            
+            return valor;
+            }
+    </script>
+     
+
+</body>
+</html>

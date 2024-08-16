@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+</head>
+
+<body>
+    <label for="inputTermo">Posiçao do seu Número </label>
+    <input type="number" name="inputTermo" id="inputTermo">
+    <br>
+    <br>
+    <input type="button" value="Calcular" onclick="gerarSequenciaFibonacci()">
+    <br>
+    <br>
+    <label for="resp">Número da posiçao digitada =</label>
+    <span id="resp"></span>
+    <br>
+    <br>
+    <script>
+        function gerarSequenciaFibonacci() {
+            num = document.getElementById("inputTermo").value;
+            let a =0;
+            let b=1;
+            let s = 0;
+            let resp = "0,1,";
+            for (let i = 0; i < num-2; i++) {
+                s = a + b;
+                a = b;
+                b = s;
+                resp += s + ',';
+            }
+            document.getElementById("resp").textContent = resp.substring(0,resp.length-1);//mostra a resposta e retira a vírgula do final
+        }
+    </script>
+</body>
+
+</html>

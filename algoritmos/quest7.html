@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular se é ano Bissexto</title>
+</head>
+
+<body>
+    <label for="inputAno">Informe um ano</label>
+    <input type="number" name="inputAno" id="inputAno">
+
+    <br>
+    <br>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <br>
+    <br>
+    <label for="resp">Resposta</label>
+    <div id="resp"></div>
+
+    <script>
+        function verificar() {
+            let ano = parseInt(document.getElementById("inputAno").value);
+            let resp;
+            if (ano % 4 == 0) {
+                resp = "True";
+            } else {
+                resp = "False";
+            }
+            document.getElementById("resp").innerText = resp;
+        }
+
+    </script>
+</body>
+
+</html>

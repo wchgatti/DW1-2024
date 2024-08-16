@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Distância de dois pontos</h1>
+    <label for="pont">Ponto x1</label>
+    <input type="number" name="pont" id="pont">
+    <br>
+    <br>
+    <label for="pont2">Ponto y1</label>
+    <input type="number" name="pont2" id="pont2">
+    <br>
+    <br>
+    <label for="pont3">Ponto x2</label>
+    <input type="number" name="pont3" id="pont3">
+    <br>
+    <br>
+    <label for="pont4">Ponto y2</label>
+    <input type="number" name="pont4" id="pont4">
+    <br>
+    <br>
+    <input type="button" value="A distância é de" onclick="calcular()">
+    <br>
+    <br>
+    <label for="resp">Sua distância: </label>
+    <span id="resp"></span>
+
+    <script>
+        function calcular(){
+            x1 = document.getElementById("pont").value;
+            y1 = document.getElementById("pont2").value;
+            x2 = document.getElementById("pont3").value;
+            y2 = document.getElementById("pont4").value;
+            let saida = calcularMult(x1, y1, x2, y2);
+            document.getElementById("resp").innerText = saida;
+           }
+
+           function calcularMult(x1, y1, x2, y2) {
+            let point = 0;
+            point = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2))
+            return point;
+            }
+               
+
+            
+    </script>
+     
+
+</body>
+</html>
