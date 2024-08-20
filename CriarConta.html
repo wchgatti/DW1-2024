@@ -15,83 +15,117 @@
         body{
             width: 100vw;
             height: 100vh;
-            overflow: hidden;
+            /* overflow: hidden; */
+            display: flex;
+            /* justify-content: space-around; */
+            /* align-items: center; */
         }
 
         .container{
-            margin-top: 200px;
-            /* display: flex; */
-            flex-direction: column; 
-
-            justify-content: space-around;
-            align-items: center;
-
+            display: flex;
+            flex-direction: column;
             align-content: space-around;
             flex-wrap: wrap;
+
         }
 
         #box{
             width: 40rem;
             height: 30vh;
-            background-color: blue;
+            background-color: white;
             text-align: center;
+            
         }
 
         #or{
             width: 40rem;
-            height: 10vh;
-            background-color: blueviolet;
+            height: 2rem;
+            background-color: white;
+            margin-top: 1rem;
             text-align: center;
-            display: flex;
-            justify-content: center; 
-            
         }
         
         #goo{
             width: 40rem;
-            height: 30;
-            background-color: gray;
+            height: 10rem;
+            background-color: white;
             text-align: center;
+            margin-top: 1rem;
+        }
+        
+        
+
+        button{
+            width: 20rem;
+            height: 2rem;
+            background-color: white;
+            border: 1px solid black;
+            margin-top: 1rem;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        #Google{
-            border: 1px solid rgb(0, 0, 0);
-            width: 31rem;
-            height: 5rem;
-            /* align-items: center; */
             justify-content: center;
-            align-content: center;
-            /* margin-top: 5px; */
+            align-items: center;
+            margin-left: 10rem;
         }
         
-        #Apple{
-            border: 1px solid rgb(0, 0, 0);
-            width: 31rem;
-            height: 5rem;
-            margin-top: 10px;
-            align-items: center;
+        #Google img{
+            width: 14px;
+            height: 14px;
         }
-        
-        #Face{
-            border: 1px solid rgb(0, 0, 0);
-            width: 31rem;
-            height: 5rem;
-            align-items: center;
-            margin-top: 10px;
+
+        #Apple img{
+            width: 14px;
+            height: 17px;
+        }
+
+        #Face img{
+            width: 25px;
+            height: 25px;
         }
         
         #termos{
             width: 40rem;
-            height: 10vh;
+            height: 5rem;
             text-align: center;
+            background-color: white;
+            margin-top: 1rem;
         }
         
+        input{
+            width: 20rem;
+            height: 2rem;
+        }
+
+        #nome {
+            margin-top: 2rem;
+
+        }
+        #box h4{
+            margin-top: 1rem;
+        }
 
         b{
             text-decoration: underline;
+        }
+
+        .imagem{
+            width: 60rem;
+            height: 100vh;
+            background-image: url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg);
+            background-size: cover;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            flex-direction: column;
+        }
+
+        .texto{
+            margin-bottom: 6rem;
+            color: white;
+        }
+
+        .tezto{
+            color: white;
         }
 
     </style>
@@ -101,14 +135,18 @@
     <div class="container">
 
         <div id="box">
-            <h1>Sing in or creat an account</h1>
-            <h3>Welcome back! Please enter your details</h3>
+            <h1>Sign in or create an account</h1>
+            <h4>Welcome back! Please enter your details</h4>
+            <input type="text" id="nome" placeholder="Nome">
+            <br>
+            <br>
+            <input type="text" id="email" placeholder="Email address">
         </div>
 
         
 
         <div id="or">
-            <h2>--------------------------------------or--------------------------------------</h2>
+            <h3>--------------------------or-------------------------</h3 >
         </div>
 
         
@@ -117,28 +155,33 @@
             
             <div id="Google">
                 <div>
-                    <h3>Continue whit Google</h3>
+                    <button><img src="https://logopng.com.br/logos/google-37.png" alt=""> Continue with Google</button>
 
                 </div>
             </div>
 
             <div id="Apple">
-                <h3>Continue whit Apple</h3>
+                <button><img src="https://logopng.com.br/logos/apple-4.png" alt=""> Continue with Apple</button>
 
             </div>
             
             <div id="Face">
-                <h3>Continue whit Facebook</h3>
+                <button><img src="https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png" alt=""> Continue with Facebook</button>
 
             </div>
 
         </div>
         
         <div id="termos">
-            <p class="p">By signing in or creating an account, you agree whit
+            <p class="p">By signing in or creating an account, you agree with
             our <b>Terms & Conditions</b> and <b>Privacy Statement</b></p>
         </div>
 
+    </div>
+
+    <div class="imagem">
+         <h1 class="tezto">"The persistence is the way to success."</h1>
+         <h3 class="texto">Ass: Wesley Gatti</h3>
     </div>
 
 </body>
