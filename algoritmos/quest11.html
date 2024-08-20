@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Fatorial dos números</h1>
+    <label for="num">Seu número</label>
+    <input type="number" name="num" id="num">
+    <br>
+    <br>
+    <input type="button" value="Fatorar o número" onclick="calcular()">
+    <br>
+    <br>
+    <label for="resp">O fatorial é: </label>
+    <span id="resp"></span>
+
+    <script>
+        function calcular(){
+            fat = parseInt(document.getElementById("num").value);
+            let saida = calcularMult(fat);
+            document.getElementById("resp").innerText = saida;
+           }
+
+           function calcularMult(fat){
+            for (let i = fat - 1; i >= 1; i--){
+                fat= fat * i;
+            }
+           
+            return fat;
+            }
+    </script>
+     
+
+</body>
+</html>

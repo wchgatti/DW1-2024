@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container{
+            margin-top: 200px;
+            /* display: flex; */
+            flex-direction: column; 
+
+            justify-content: space-around;
+            align-items: center;
+
+            align-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        #box{
+            width: 40rem;
+            height: 30vh;
+            background-color: blue;
+            text-align: center;
+        }
+
+        #or{
+            width: 40rem;
+            height: 10vh;
+            background-color: blueviolet;
+            text-align: center;
+            display: flex;
+            justify-content: center; 
+            
+        }
+        
+        #goo{
+            width: 40rem;
+            height: 30;
+            background-color: gray;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #Google{
+            border: 1px solid rgb(0, 0, 0);
+            width: 31rem;
+            height: 5rem;
+            /* align-items: center; */
+            justify-content: center;
+            align-content: center;
+            /* margin-top: 5px; */
+        }
+        
+        #Apple{
+            border: 1px solid rgb(0, 0, 0);
+            width: 31rem;
+            height: 5rem;
+            margin-top: 10px;
+            align-items: center;
+        }
+        
+        #Face{
+            border: 1px solid rgb(0, 0, 0);
+            width: 31rem;
+            height: 5rem;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        #termos{
+            width: 40rem;
+            height: 10vh;
+            text-align: center;
+        }
+        
+
+        b{
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div id="box">
+            <h1>Sing in or creat an account</h1>
+            <h3>Welcome back! Please enter your details</h3>
+        </div>
+
+        
+
+        <div id="or">
+            <h2>--------------------------------------or--------------------------------------</h2>
+        </div>
+
+        
+
+        <div id="goo">
+            
+            <div id="Google">
+                <div>
+                    <h3>Continue whit Google</h3>
+
+                </div>
+            </div>
+
+            <div id="Apple">
+                <h3>Continue whit Apple</h3>
+
+            </div>
+            
+            <div id="Face">
+                <h3>Continue whit Facebook</h3>
+
+            </div>
+
+        </div>
+        
+        <div id="termos">
+            <p class="p">By signing in or creating an account, you agree whit
+            our <b>Terms & Conditions</b> and <b>Privacy Statement</b></p>
+        </div>
+
+    </div>
+
+</body>
+</html>
