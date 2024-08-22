@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+
+        input{
+            border: 2px solid rgb(22, 19, 219);
+            border-radius: 4px;
+            background-color: rgb(190, 190, 255);
+            padding: 0.3rem;
+        }
+        
+        input::placeholder{
+            color: rgb(255, 255, 255);
+        }
+
+        input[type=password]{
+            background-color: rgb(92, 223, 223);
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Formulário</h1>
+
+    <form action="#" method="get">
+        <label for="nomeUsuario">Nome</label>
+        <input type="text" id="nomeUsuario" placeholder="Digite Seu nome">
+    </form>
+
+    <form action="#" method="get">
+        <label for="senhaUsuario">Senha</label>
+        <input type="password" id="senhaUsuario" placeholder="Digite Sua senha">
+    </form>
+
+    <form action="#" method="get">
+        <label for="e-mailUsuario">E-mail</label>
+        <input type="email" id="e-mailUsuario" placeholder="Digite Seu e-mail">
+    </form>
+</body>
+</html>
