@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multa</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sistem{
+            margin-left: 50px;
+        }
+
+        #bloco{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #bloco1{
+            width: 40vw;
+            height: 30vh;
+            background-color: #DDDD;
+            border:2px solid black ;
+            text-align: center;
+        }
+        
+        #bloco2{
+            width: 40vw;
+            height: 30vh;
+            background-color: #DDDD;
+            border:2px solid black ;
+            text-align: center;
+        }
+
+        span{
+            text-align: center;
+            
+        }
+        span:hover{
+            text-align: center;
+            
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1 class="sistem">Sistemas de Multas</h1>
+    <div id="bloco">
+
+    <div id="bloco1">
+        <label for="velov"><h3>Velocidade do Veículo</h3></label>
+        <input type="number" id="velov">
+
+        <label for="velop"><h3>Velocidade Permitida</h3></label>
+        <input type="number" id="velop">
+        <br><br>
+        <input type="button" value="calcular" onclick="calcular()">
+    </div>
+
+    <div id="bloco2">
+        <p><h2>Multa por exesso de velocidade:</h2></p>
+        <p><b>R$ 130,16</b> - Até 20% acima do limite permitido</p>
+        <br>
+        <p><b>R$ 195,23</b> - De 20% até 50% acima do limite permitido</p>
+        <br>
+        <p><b>R$ 880,41</b> - Até 50% acima do limite permitido</p>
+    </div>
+</div>
+<div id="resp">Multas :</div>
+
+    <script>
+        function calcular(){;
+            calc = document.getElementById("velov").value;
+            calc2 = document.getElementById("velop").value;
+            let saida = calcularConta(calc, calc2);
+            document.getElementById("resp").innerText = saida;
+        }
+
+        function calcularConta(calc, calc2){
+            let resp = "";
+            if(calc2 >= calc){
+                resp = "Sem multa";
+            }
+            else if((calc - calc2) / 100 > 0 && (calc - calc2) / 100 < 0.2 ){
+                resp = "Multa de R$ 130,16"
+            }
+            else if((calc - calc2) / 100 >= 0.2 && (calc - calc2) / 100 >= 0.5){
+                resp = "Multa de R$ 195,23"
+            }
+            else if((calc - calc2) / 100 > 0.5){
+                resp = "Multa de R$ 880,41"
+            }
+            else {
+                resp = "Coloque um valor válido"
+            }
+
+            document.getElementById("resp").innerHTML = "Multas : "  + resp ;
+        }
+
+    </script>
+</body>
+</html>
