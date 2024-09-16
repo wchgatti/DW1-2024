@@ -71,35 +71,34 @@
         <p><b>R$ 880,41</b> - Até 50% acima do limite permitido</p>
     </div>
 </div>
-<div id="resp"> <h2>Multas :</h2></div>
+<h2>
+    <div id="resp"> Multa de :</div>
+</h2>
 
     <script>
         function calcular(){;
             calc = document.getElementById("velov").value;
             calc2 = document.getElementById("velop").value;
             let saida = calcularConta(calc, calc2);
-            document.getElementById("resp").innerText = saida;
         }
 
         function calcularConta(calc, calc2){
             let resp = "";
-            if(calc2 >= calc){
-                resp = "Sem multa";
+            
+            if((calc - calc2) / 100 > 0 && (calc - calc2) / 100 < 0.2 ){
+                resp = "Multa de :R$ 130,16"
             }
-            else if((calc - calc2) / 100 > 0 && (calc - calc2) / 100 < 0.2 ){
-                resp = "Multa de R$ 130,16"
-            }
-            else if((calc - calc2) / 100 >= 0.2 && (calc - calc2) / 100 >= 0.5){
-                resp = "Multa de R$ 195,23"
+            else if((calc - calc2) / 100 >= 0.2 && (calc - calc2) / 100 <= 0.5){
+                resp = "Multa de :R$ 195,23"
             }
             else if((calc - calc2) / 100 > 0.5){
-                resp = "Multa de R$ 880,41"
+                resp = "Multa de :R$ 880,41"
             }
             else {
-                resp = "Coloque um valor válido"
+                resp = "Sem multa"
             }
 
-            return resp;
+            document.getElementById("resp").innerHTML = resp;
         }
 
     </script>
