@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Bar</title>
+</head>
+
+<body>
+
+   <h1>Cadastro de Produto Bar do Farol</h1>
+
+   <label for="inputPlaca">ID/Nome do Produto</label>
+   <input type="text" name="inputPlaca" id="inputPlaca">
+   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+
+   <label for="inputNome">Tipo do Produto</label>
+   <input type="text" name="inputNome" id="inputNome">
+   <br>
+   <label for="inputDataLancamento">Peso do Produto</label>
+   <input type="number" name="inputDataLancamento" id="inputDataLancamento">
+   <br>
+   <label for="inputCor">Preço do Produto</label>
+   <input type="number" name="inputCor" id="inputCor">
+   <br>
+   <label for="inputPeso">Quantidade na caixa</label>
+   <input type="number" name="inputPeso" id="inputPeso">
+   <br>
+
+   <br><br>
+   <div id="divAviso" style="background-color: rgb(179, 255, 179);"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <!-- <input type="button" value="Listar" onclick="listar()">
+    <br><br> -->
+
+   <div id="outputSaida" style="background-color: rgb(0, 255, 42);">...</div>
+
+   <script src="./Bar.js"></script>
+   <script src="./BarControle.js"></script>
+
+</body>
+
+</html>
