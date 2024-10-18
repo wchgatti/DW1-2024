@@ -1,13 +1,13 @@
 let listaCarro = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
-let carro = null; //variavel global 
+let bar = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
     for (let i = 0; i < listaCarro.length; i++) {
-        const carro = listaCarro[i];
-        if (carro.placa == chave) {
-            carro.posicaoNaLista = i;
+        const bar = listaCarro[i];
+        if (bar.id == chave) {
+            bar.posicaoNaLista = i;
             return listaCarro[i];
         }
     }
@@ -16,11 +16,11 @@ function procurePorChavePrimaria(chave) {
 
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
-    const placa = document.getElementById("inputPlaca").value;
-    if (placa) { // se digitou um Placa
-        carro = procurePorChavePrimaria(placa);
-        if (carro) { //achou na lista
-            mostrarDadosCarro(carro);
+    const id = document.getElementById("inputId").value;
+    if (id) { // se digitou um Placa
+        bar = procurePorChavePrimaria(id);
+        if (bar) { //achou na lista
+            mostrarDadosCarro(bar);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -29,7 +29,7 @@ function procure() {
             mostrarAviso("Não achou na lista, pode inserir");
         }
     } else {
-        document.getElementById("inputPlaca").focus();
+        document.getElementById("inputId").focus();
         return;
     }
 }
@@ -40,7 +40,7 @@ function inserir() {
     visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
     oQueEstaFazendo = 'inserindo';
     mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
-    document.getElementById("inputPlaca").focus();
+    document.getElementById("inputId").focus();
 
 }
 
@@ -70,34 +70,34 @@ function salvar() {
 
     // obter os dados a partir do html
 
-    let placa;
-    if (carro == null) {
-        placa = document.getElementById("inputPlaca").value;
+    let id;
+    if (bar == null) {
+        id = document.getElementById("inputId").value;
     } else {
-        placa = carro.placa;
+        id = bar.id;
     }
 
-    const nome = document.getElementById("inputNome").value;
-    const dataLancamento = document.getElementById("inputDataLancamento").value;
-    const peso = parseInt(document.getElementById("inputPeso").value);
-    const cor = document.getElementById("inputCor").value;
+    const tipo = document.getElementById("inputTipo").value;
+    const peso = document.getElementById("inputPeso").value;
+    const caixa = parseInt(document.getElementById("inputCaixa").value);
+    const preco = document.getElementById("inputPreco").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (placa && nome && dataLancamento && peso && cor) {// se tudo certo 
+    if (id && tipo && peso && caixa && preco) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                carro = new Carro(placa, nome, dataLancamento, peso, cor);
-                listaCarro.push(carro);
+                bar = new Carro(id, tipo, peso, caixa, preco);
+                listaCarro.push(bar);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                carroAlterado = new Carro(placa, nome, dataLancamento, peso, cor);
-                listaCarro[carro.posicaoNaLista] = carroAlterado;
+                carroAlterado = new Carro(id, tipo, peso, caixa, preco);
+                listaCarro[bar.posicaoNaLista] = carroAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
                 for (let i = 0; i < listaCarro.length; i++) {
-                    if (carro.posicaoNaLista != i) {
+                    if (bar.posicaoNaLista != i) {
                         novaLista.push(listaCarro[i]);
                     }
                 }
@@ -111,7 +111,7 @@ function salvar() {
         visibilidadeDosBotoes('inline', 'none', 'none', 'none', 'none');
         limparAtributos();
         listar();
-        document.getElementById("inputPlaca").focus();
+        document.getElementById("inputId").focus();
     } else {
         alert("Erro nos dados digitados");
         return;
@@ -124,11 +124,11 @@ function preparaListagem(vetor) {
     for (let i = 0; i < vetor.length; i++) {
         const linha = vetor[i];
         texto +=
-            linha.placa + " - " +
-            linha.nome + " - " +
-            linha.dataLancamento + " Litros - " +
-            linha.peso + " Unidades - " +
-            linha.cor + " reais <br>";
+            linha.id + " - " +
+            linha.tipo + " - " +
+            linha.peso + " Litros - " +
+            linha.caixa + " Unidades - " +
+            linha.preco + " reais <br>";
     }
     return texto;
 }
@@ -151,12 +151,12 @@ function mostrarAviso(mensagem) {
 }
 
 // Função para mostrar os dados do Carro nos campos
-function mostrarDadosCarro(carro) {
-    document.getElementById("inputPlaca").value = carro.placa;
-    document.getElementById("inputNome").value = carro.nome;
-    document.getElementById("inputDataLancamento").value = carro.dataLancamento;
-    document.getElementById("inputPeso").value = carro.peso;
-    document.getElementById("inputCor").value = carro.cor;
+function mostrarDadosCarro(bar) {
+    document.getElementById("inputId").value = bar.id;
+    document.getElementById("inputTipo").value = bar.tipo;
+    document.getElementById("inputPeso").value = bar.peso;
+    document.getElementById("inputCaixa").value = bar.caixa;
+    document.getElementById("inputPreco").value = bar.preco;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -164,21 +164,21 @@ function mostrarDadosCarro(carro) {
 
 // Função para limpar os dados dos campos
 function limparAtributos() {
-    document.getElementById("inputNome").value = "";
-    document.getElementById("inputDataLancamento").value = "";
+    document.getElementById("inputTipo").value = "";
     document.getElementById("inputPeso").value = "";
-    document.getElementById("inputCor").value = "";
+    document.getElementById("inputCaixa").value = "";
+    document.getElementById("inputPreco").value = "";
 
     bloquearAtributos(true);
 }
 
 function bloquearAtributos(soLeitura) {
     //quando a chave primaria possibilita edicao, tranca (readonly) os outros e vice-versa
-    document.getElementById("inputPlaca").readOnly = !soLeitura;
-    document.getElementById("inputNome").readOnly = soLeitura;
-    document.getElementById("inputDataLancamento").readOnly = soLeitura;
+    document.getElementById("inputId").readOnly = !soLeitura;
+    document.getElementById("inputTipo").readOnly = soLeitura;
     document.getElementById("inputPeso").readOnly = soLeitura;
-    document.getElementById("inputCor").readOnly = soLeitura;
+    document.getElementById("inputCaixa").readOnly = soLeitura;
+    document.getElementById("inputPreco").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -193,5 +193,5 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
     document.getElementById("btExcluir").style.display = btExcluir;
     document.getElementById("btSalvar").style.display = btSalvar;
     document.getElementById("btCancelar").style.display = btSalvar; // o cancelar sempre aparece junto com o salvar
-    document.getElementById("inputPlaca").focus();
+    document.getElementById("inputId").focus();
 }

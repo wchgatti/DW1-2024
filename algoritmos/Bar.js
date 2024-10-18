@@ -1,10 +1,10 @@
 class Carro {
-    constructor(placa, nome, dataLancamento, peso, cor, posicaoNaLista) {
-        this.placa = placa;
-        this.nome = nome;
-        this.dataLancamento = dataLancamento;
+    constructor(id, tipo, peso, caixa, preco, posicaoNaLista) {
+        this.id = id;
+        this.tipo = tipo;
         this.peso = peso;
-        this.cor = cor;
+        this.caixa = caixa;
+        this.preco = preco;
 
 
         this.posicaoNaLista = posicaoNaLista; //atributo para facilitar a alteração e exclusão 
