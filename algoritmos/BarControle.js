@@ -1,14 +1,14 @@
-let listaCarro = []; //conjunto de dados
+let listaProduto = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
 let bar = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaCarro.length; i++) {
-        const bar = listaCarro[i];
+    for (let i = 0; i < listaProduto.length; i++) {
+        const bar = listaProduto[i];
         if (bar.id == chave) {
             bar.posicaoNaLista = i;
-            return listaCarro[i];
+            return listaProduto[i];
         }
     }
     return null;//não achou
@@ -17,10 +17,10 @@ function procurePorChavePrimaria(chave) {
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
     const id = document.getElementById("inputId").value;
-    if (id) { // se digitou um Placa
+    if (id) { // se digitou um nome
         bar = procurePorChavePrimaria(id);
         if (bar) { //achou na lista
-            mostrarDadosCarro(bar);
+            mostrarDadosproduto(bar);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -85,23 +85,23 @@ function salvar() {
     if (id && tipo && peso && caixa && preco) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                bar = new Carro(id, tipo, peso, caixa, preco);
-                listaCarro.push(bar);
+                bar = new Produto(id, tipo, peso, caixa, preco);
+                listaProduto.push(bar);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                carroAlterado = new Carro(id, tipo, peso, caixa, preco);
-                listaCarro[bar.posicaoNaLista] = carroAlterado;
+                produtoAlterado = new Produto(id, tipo, peso, caixa, preco);
+                listaProduto[bar.posicaoNaLista] = produtoAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaCarro.length; i++) {
+                for (let i = 0; i < listaProduto.length; i++) {
                     if (bar.posicaoNaLista != i) {
-                        novaLista.push(listaCarro[i]);
+                        novaLista.push(listaProduto[i]);
                     }
                 }
-                listaCarro = novaLista;
+                listaProduto = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
@@ -128,14 +128,14 @@ function preparaListagem(vetor) {
             linha.tipo + " - " +
             linha.peso + " Litros - " +
             linha.caixa + " Unidades - " +
-            linha.preco + " reais <br>";
+            linha.preco + " Reais <br>";
     }
     return texto;
 }
 
 //backend->frontend (interage com html)
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaCarro);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaProduto);
 }
 
 function cancelarOperacao() {
@@ -150,8 +150,8 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do Carro nos campos
-function mostrarDadosCarro(bar) {
+// Função para mostrar os dados do produto nos campos
+function mostrarDadosproduto(bar) {
     document.getElementById("inputId").value = bar.id;
     document.getElementById("inputTipo").value = bar.tipo;
     document.getElementById("inputPeso").value = bar.peso;

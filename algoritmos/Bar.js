@@ -1,4 +1,4 @@
-class Carro {
+class Produto {
     constructor(id, tipo, peso, caixa, preco, posicaoNaLista) {
         this.id = id;
         this.tipo = tipo;

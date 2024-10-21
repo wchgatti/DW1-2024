@@ -5,6 +5,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>CRUD Bar</title>
+
+
 </head>
 
 <body>
@@ -12,23 +14,23 @@
    <h1>Cadastro de Produto Bar do Farol</h1>
 
    <label for="inputId">ID/Nome do Produto</label>
-   <input type="text" name="inputId" id="inputId">
-   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="text" name="inputId" id="inputId" placeholder="Digite o ID/Nome do produto">
+   <input type="button" value="Procurar Produto" id="btProcure" onclick="procure()" style="display:inline;">
    <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
    <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
    <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
    <br><br>
 
-   <label for="inputTipo">Tipo do Produto</label>
+   <label for="inputTipo">Tipo do Produto Refri/Cerveja/Pinga</label>
    <input type="text" name="inputTipo" id="inputTipo">
    <br>
-   <label for="inputPeso">Peso do Produto</label>
+   <label for="inputPeso">Peso do Produto em Litros------------</label>
    <input type="number" name="inputPeso" id="inputPeso">
    <br>
-   <label for="inputPreco">Preço do Produto</label>
+   <label for="inputPreco">Preço do Produto em Reais-----------</label>
    <input type="number" name="inputPreco" id="inputPreco">
    <br>
-   <label for="inputCaixa">Quantidade na caixa</label>
+   <label for="inputCaixa">Quantidade no Fardo Fechado-------</label>
    <input type="number" name="inputCaixa" id="inputCaixa">
    <br>
 
