@@ -88,7 +88,7 @@ nav a:hover{
     max-width: 400px;
 }
 
-@media (max-width: 600px){
+@media (max-width: 1000px){
 
     .hideMobile{
         display: none;
@@ -96,10 +96,16 @@ nav a:hover{
 
 }
 
-@media (min-width: 600px){
+@media (min-width: 1000px){
 
     .hideDesktop{
         display: none;
+    }
+
+    #sidebar{
+        display: none;
+        backdrop-filter: none;
+        background-color: transparent;
     }
 
 }
