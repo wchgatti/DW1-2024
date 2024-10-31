@@ -6,6 +6,7 @@
 }
 
 body{
+    overflow: hidden;
     min-height: 100vh;
     background-image: url("https://get.wallhere.com/photo/mountains-night-planet-winter-road-Earth-moonlight-atmosphere-screenshot-computer-wallpaper-outer-space-geological-phenomenon-fantastic-landscape-618416.jpg");
     background-size: cover;
@@ -47,6 +48,7 @@ nav a{
 
 nav a:hover{
     color: #dcdcdc;
+    transform: scale(107%);
 }
 
 #sidebar{
@@ -62,7 +64,13 @@ nav a:hover{
     flex-direction: column;
     justify-content: start;
 
+    transition: all 2s;
+
     z-index: 999;
+}
+
+#sidebar :hover{
+    transform: scale(110%);
 }
 
 .icon{
