@@ -1,6 +1,9 @@
 let listaProduto = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
 let bar = null; //variavel global 
+
+window.onload = inserirDados();
+
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
@@ -88,11 +91,12 @@ function salvar() {
                 bar = new Produto(id, tipo, peso, caixa, preco);
                 listaProduto.push(bar);
                 mostrarAviso("Inserido na lista");
+                listar();
                 break;
-            case 'alterando':
-                produtoAlterado = new Produto(id, tipo, peso, caixa, preco);
-                listaProduto[bar.posicaoNaLista] = produtoAlterado;
-                mostrarAviso("Alterado");
+                case 'alterando':
+                    produtoAlterado = new Produto(id, tipo, peso, caixa, preco);
+                    listaProduto[bar.posicaoNaLista] = produtoAlterado;
+                    mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
@@ -133,11 +137,24 @@ function preparaListagem(vetor) {
     return texto;
 }
 
-//backend->frontend (interage com html)
-function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaProduto);
+function inserirDados(){
+    listaProduto = []
+    let linha = new Produto(1, "Refri", 2, 6, 14);
+    listaProduto.push(linha);
+
+    linha = new Produto(2, "Cerveja", 0.600, 24, 7.5);
+    listaProduto.push(linha);
+
+    linha = new Produto(3, "Pinga", 1, 12, 15);
+    listaProduto.push(linha);
+
+    listar()
 }
 
+
+
+//backend->frontend (interage com html)
+    
 function cancelarOperacao() {
     limparAtributos();
     bloquearAtributos(true);
@@ -195,3 +212,5 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
     document.getElementById("btCancelar").style.display = btSalvar; // o cancelar sempre aparece junto com o salvar
     document.getElementById("inputId").focus();
 }
+
+
