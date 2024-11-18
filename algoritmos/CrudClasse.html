@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Bike</title>
+
+
+</head>
+
+<body>
+
+   <h1>Cadastro de Bike</h1>
+   
+   <label for="inputId">ID/Nome da Bike</label>
+   <input type="text" name="inputId" id="inputId" placeholder="Digite o ID/Nome da Bike">
+   <input type="button" value="Procurar Produto" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+   
+   <label for="inputTipo">Nome da Bike ------------</label>
+   <input type="text" name="inputTipo" id="inputTipo">
+   <br>
+   <label for="inputFabri">Fabricante -----------------</label>
+   <input type="text" name="inputFabri" id="inputFabri">
+   <br>
+   <label for="inputPeso">Peso da Bike --------------</label>
+   <input type="number" name="inputPeso" id="inputPeso">
+   <br>
+   <label for="inputPreco">Preço da Bike em Reais -</label>
+   <input type="number" name="inputPreco" id="inputPreco">
+   <br>
+   <label for="inputData">Data de Lançamento -----</label>
+   <input type="date" name="inputData" id="inputData">
+   <br>
+   <br>
+
+   <label for="inputId2">Informar Peso Aqui</label>
+   <input type="number" name="inputId2" id="inputId2" placeholder="Informe o Peso">
+   <input type="button" value="Procurar Produto Por Peso" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+   <label for="inputTipo2">Nome da Bike ------------</label>
+   <input type="text" name="inputTipo2" id="inputTipo2">
+   <br>
+   <label for="inputFabri2">Fabricante -----------------</label>
+   <input type="text" name="inputFabri2" id="inputFabri2">
+   <br>
+   <label for="inputPeso2">Peso da Bike --------------</label>
+   <input type="number" name="inputPeso2" id="inputPeso2">
+   <br>
+   <label for="inputPreco2">Preço da Bike em Reais -</label>
+   <input type="number" name="inputPreco2" id="inputPreco2">
+   <br>
+   <label for="inputData2">Data de Lançamento -----</label>
+   <input type="date" name="inputData2" id="inputData2">
+   <br>
+   <br>
+
+   <div id="divAviso" style="background-color: rgb(179, 255, 179);"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <!-- <input type="button" value="Listar" onclick="listar()">
+    <br><br> -->
+
+   <div id="outputSaida" style="background-color: rgb(0, 255, 42);">...</div>
+
+      <!-- <div style="background-color:rgb(0, 255, 42);">1 - Refri - 2 Litros - 6 Unidades - 14 Reais </div> -->
+
+   <script src="./Classe.js"></script>
+   <script src="./ClasseControle.js"></script>
+
+</body>
+
+</html>
