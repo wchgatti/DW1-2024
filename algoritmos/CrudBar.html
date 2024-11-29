@@ -13,8 +13,8 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        margin: 200px;
-        background-color: #f2e9e4;
+        margin: 150px;
+        background-color: #eedad0;
     }
 
     * {
@@ -24,11 +24,10 @@
     }
 
     .dados {
-         box-shadow: 3px 5px 10px;
+        box-shadow: 3px 5px 10px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        /* border: 2px solid black; */
         border-radius: 4px;
         width: 34vw;
         padding: 20px;
@@ -152,51 +151,34 @@
    <br><br>
 
    <label for="inputTipo">Tipo do Produto Refri/Cerveja/Pinga </label>
-   <input class="cor1" type="text" name="inputTipo" id="inputTipo">
+   <input type="text" name="inputTipo" id="inputTipo">
    <br>
    <label for="inputPeso">Peso do Produto em Litros</label>
-   <input class="cor1" type="number" name="inputPeso" id="inputPeso">
+   <input type="number" name="inputPeso" id="inputPeso">
    <br>
    <label for="inputCaixa">Unidades no Fardo Fechado</label>
-   <input class="cor1" type="number" name="inputCaixa" id="inputCaixa">
+   <input type="number" name="inputCaixa" id="inputCaixa">
    <br>
    <label for="inputPreco">Preço da Unidade em Reais </label>
-   <input class="cor1" type="number" name="inputPreco" id="inputPreco">
+   <input type="number" name="inputPreco" id="inputPreco">
    <br>
    <label for="inputData">Data de Fabricação</label>
    <input type="date" name="inputData" id="inputData">
    <br>
-
-   <br><br>
+   <br>
    <div id="divAviso" style="background-color: rgb(179, 255, 179);"></div>
    <br>
    <input class="procura" type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
    <input class="excluir" type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
    <br><br>
 
-   <div id="outputSaida" style=" border-radius: 3px;">...</div>
+   <div id="outputSaida"></div>
 
 
 </div>
 
    <script src="./Bar.js"></script>
    <script src="./BarControle.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
-   <script>
-      const firebaseConfig = { 
-    apiKey : "AIzaSyA515h2Efcy5fg48Vii88U0rwaBWTsLOyE" , 
-    authDomain : "crudbar-13cae.firebaseapp.com" , 
-    projectId : "crudbar-13cae" , 
-    storageBucket : "crudbar-13cae.firebasestorage.app" , 
-    messagingSenderId : "712606199419" , 
-    appId : "1:712606199419:web:68c5bdd7363caf976cfcde" , 
-    measurementId : "G-468ZGFKPQD" 
-   };
-   firebase.initializeApp(firebaseConfig);
-   const database = firebase.database();
-   const firestore = firebase.firestore();
-   </script>
 
 <script>
    // Seleciona todos os inputs do tipo "number" no formulário
@@ -211,22 +193,7 @@
          }
       });
    });
-</script>
 
-<!-- <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-database-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
-
-<script>
-const firebaseConfig = {
-   apiKey: "AIzaSyA515h2Efcy5fg48Vii88U0rwaBWTsLOyE",
-   authDomain: "crudbar-13cae.firebaseapp.com",
-   projectId: "crudbar-13cae",
-   storageBucket: "crudbar-13cae.firebasestorage.app",
-   messagingSenderId: "712606199419",
-   appId: "1:712606199419:web:68c5bdd7363caf976cfcde",
-   measurementId: "G-468ZGFKPQD"
- }; -->
 </script>
 </body>
 

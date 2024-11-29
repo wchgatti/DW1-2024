@@ -227,3 +227,4 @@ function listar() {
     document.getElementById("outputSaida").innerHTML = preparaListagem(listaProduto);
 }
 
+ 
