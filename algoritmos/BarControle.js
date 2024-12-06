@@ -39,12 +39,17 @@ function procure() {
 
 //backend->frontend
 function inserir() {
-    bloquearAtributos(false);
-    visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
-    oQueEstaFazendo = 'inserindo';
-    mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
-    document.getElementById("inputId").focus();
-
+    const id = parseInt(document.getElementById("inputId").value);
+    if(procurePorChavePrimaria(id)!==null){
+        alert("erro")
+        
+    }else{
+        bloquearAtributos(false);
+        visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
+        oQueEstaFazendo = 'inserindo';
+        mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
+        document.getElementById("inputId").focus();
+    }
 }
 
 // Função para alterar um elemento da lista
@@ -222,3 +227,4 @@ function listar() {
     document.getElementById("outputSaida").innerHTML = preparaListagem(listaProduto);
 }
 
+ 
