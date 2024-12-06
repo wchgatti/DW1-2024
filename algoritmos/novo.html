@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Aluno</title>
+
+
+</head>
+
+<body>
+
+   <h1>Alunos</h1>
+   
+   <label for="inputId">RA do Aluno</label>
+   <input type="text" name="inputId" id="inputId" placeholder="Digite o RA do Aluno">
+   <input type="button" value="Procurar Aluno" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+   
+   <label for="inputTipo">Nome do Aluno -</label>
+   <input type="text" name="inputTipo" id="inputTipo">
+   <br>
+   <label for="inputBi1">Nota 1° Bimestre</label>
+   <input type="number" name="inputBi1" id="inputBi1">
+   <br>
+   <label for="inputBi2">Nota 2° Bimestre</label>
+   <input type="number" name="inputBi2" id="inputBi2">
+   <br>
+   <label for="inputBi3">Nota 3° Bimestre</label>
+   <input type="number" name="inputBi3" id="inputBi3">
+   <br>
+   <label for="inputBi4">Nota 4° Bimestre</label>
+   <input type="number" name="inputBi4" id="inputBi4">
+   <br>
+   <br>
+   <div id="divAviso" style="background-color: rgb(179, 255, 179);"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+
+
+   <div id="outputSaida" style="background-color: rgb(0, 255, 42);">...</div>
+
+   <script src="./novo.js"></script>
+   <script src="./controleNovo.js"></script>
+
+   <script>
+    // Seleciona todos os inputs do tipo "number" no formulário
+    const numericInputs = document.querySelectorAll('input[type="number"]');
+ 
+    // Adiciona um evento de entrada para cada input numérico
+    numericInputs.forEach(input => {
+       input.addEventListener('input', () => {
+          if (input.value < 0) {
+             alert('Valores negativos não são permitidos!');
+             input.value = ''; // Limpa o valor do campo
+          }
+          if (input.value > 100) {
+             alert('Valores maiores doque 100 não são permitidos!');
+             input.value = ''; // Limpa o valor do campo
+          }
+       });
+    });
+ 
+ </script>
+</body>
+
+</html>

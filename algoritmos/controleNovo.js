@@ -1,4 +1,4 @@
-let listaProduto = []; //conjunto de dados
+let listaAluno = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
 let bar = null; //variavel global 
 
@@ -7,15 +7,16 @@ window.onload = inserirDados();
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaProduto.length; i++) {
-        const bar = listaProduto[i];
+    for (let i = 0; i < listaAluno.length; i++) {
+        const bar = listaAluno[i];
         if (bar.id == chave) {
             bar.posicaoNaLista = i;
-            return listaProduto[i];
+            return listaAluno[i];
         }
     }
     return null;//não achou
 }
+
 
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
@@ -23,7 +24,7 @@ function procure() {
     if (id) { // se digitou um nome
         bar = procurePorChavePrimaria(id);
         if (bar) { //achou na lista
-            mostrarDadosproduto(bar);
+            mostrarDadosAluno(bar);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -39,17 +40,12 @@ function procure() {
 
 //backend->frontend
 function inserir() {
-    const id = parseInt(document.getElementById("inputId").value);
-    if(procurePorChavePrimaria(id)!==null){
-        alert("erro")
-        
-    }else{
-        bloquearAtributos(false);
-        visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
-        oQueEstaFazendo = 'inserindo';
-        mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
-        document.getElementById("inputId").focus();
-    }
+    bloquearAtributos(false);
+    visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
+    oQueEstaFazendo = 'inserindo';
+    mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
+    document.getElementById("inputId").focus();
+
 }
 
 // Função para alterar um elemento da lista
@@ -86,38 +82,41 @@ function salvar() {
     }
 
     const tipo = document.getElementById("inputTipo").value;
-    const peso = document.getElementById("inputPeso").value;
-    const caixa = parseInt(document.getElementById("inputCaixa").value);
-    const preco = document.getElementById("inputPreco").value;
-    const data = document.getElementById("inputData").value;
+    const Bi1 = document.getElementById("inputBi1").value;
+    const Bi2 = parseInt(document.getElementById("inputBi2").value);
+    const Bi3 = document.getElementById("inputBi3").value;
+    const Bi4 = document.getElementById("inputBi4").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (id && tipo && peso && caixa && preco && data) {// se tudo certo 
+    if (id && tipo && Bi1 && Bi2 && Bi3 && Bi4) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                bar = new Produto(id, tipo, peso, caixa, preco, data);
-                listaProduto.push(bar);
+                bar = new Aluno(id, tipo, Bi1, Bi2, Bi3, Bi4);
+                listaAluno.push(bar);
                 mostrarAviso("Inserido na lista");
                 listar();
                 break;
                 case 'alterando':
-                    produtoAlterado = new Produto(id, tipo, peso, caixa, preco, data);
-                    listaProduto[bar.posicaoNaLista] = produtoAlterado;
+                    AlunoAlterado = new Aluno(id, tipo, Bi1, Bi2, Bi3, Bi4);
+                    listaAluno[bar.posicaoNaLista] = AlunoAlterado;
                     mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaProduto.length; i++) {
+                for (let i = 0; i < listaAluno.length; i++) {
                     if (bar.posicaoNaLista != i) {
-                        novaLista.push(listaProduto[i]);
+                        novaLista.push(listaAluno[i]);
                     }
                 }
-                listaProduto = novaLista;
+                listaAluno = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
                 // console.error('Ação não reconhecida: ' + oQueEstaFazendo);
                 mostrarAviso("Erro aleatório");
-        }
+            }
+                salvarListaNoLocalStorage(); // Salva as alterações no Local Storage
+                limparAtributos();
+                listar();
         visibilidadeDosBotoes('inline', 'none', 'none', 'none', 'none');
         limparAtributos();
         listar();
@@ -126,6 +125,7 @@ function salvar() {
         alert("Erro nos dados digitados");
         return;
     }
+      
 }
 
 //backend
@@ -136,24 +136,24 @@ function preparaListagem(vetor) {
         texto +=
             linha.id + " - " +
             linha.tipo + " - " +
-            linha.peso + " Litros - " +
-            linha.caixa + " Unidades - " +
-            linha.preco + " Reais - "+
-            linha.data + "<br>";
+            linha.Bi1 + " 1° Bimestre - " +
+            linha.Bi2 + " 2° Bimestre - " +
+            linha.Bi3 + " 3° Bimestre - "+
+            linha.Bi4 + " 4° Bimestre <br>";
     }
     return texto;
 }
 
 function inserirDados(){
-    listaProduto = []
-    let linha = new Produto(1, "Refri", 2, 6, 14, '2024-07-07');
-    listaProduto.push(linha);
+    listaAluno = []
+    let linha = new Aluno(111, "Wesley Gatti", 80, 80, 80, 80);
+    listaAluno.push(linha);
 
-    linha = new Produto(2, "Cerveja", 0.600, 24, 7.5, '2024-08-22');
-    listaProduto.push(linha);
+    linha = new Aluno(222, "Bruno Shiba", 90, 95, 85, 90);
+    listaAluno.push(linha);
 
-    linha = new Produto(3, "Pinga", 1, 12, 15, '2007-07-05');
-    listaProduto.push(linha);
+    linha = new Aluno(333, "João Bühler", 64, 70, 55, 42);
+    listaAluno.push(linha);
 
     listar();
 }
@@ -174,14 +174,14 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do produto nos campos
-function mostrarDadosproduto(bar) {
+// Função para mostrar os dados do Aluno nos campos
+function mostrarDadosAluno(bar) {
     document.getElementById("inputId").value = bar.id;
     document.getElementById("inputTipo").value = bar.tipo;
-    document.getElementById("inputPeso").value = bar.peso;
-    document.getElementById("inputCaixa").value = bar.caixa;
-    document.getElementById("inputPreco").value = bar.preco;
-    document.getElementById("inputData").value = bar.data;
+    document.getElementById("inputBi1").value = bar.Bi1;
+    document.getElementById("inputBi2").value = bar.Bi2;
+    document.getElementById("inputBi3").value = bar.Bi3;
+    document.getElementById("inputBi4").value = bar.Bi4;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -190,10 +190,10 @@ function mostrarDadosproduto(bar) {
 // Função para limpar os dados dos campos
 function limparAtributos() {
     document.getElementById("inputTipo").value = "";
-    document.getElementById("inputPeso").value = "";
-    document.getElementById("inputCaixa").value = "";
-    document.getElementById("inputPreco").value = "";
-    document.getElementById("inputData").value = "";
+    document.getElementById("inputBi1").value = "";
+    document.getElementById("inputBi2").value = "";
+    document.getElementById("inputBi3").value = "";
+    document.getElementById("inputBi4").value = "";
 
     bloquearAtributos(true);
 }
@@ -202,14 +202,11 @@ function bloquearAtributos(soLeitura) {
     //quando a chave primaria possibilita edicao, tranca (readonly) os outros e vice-versa
     document.getElementById("inputId").readOnly = !soLeitura;
     document.getElementById("inputTipo").readOnly = soLeitura;
-    document.getElementById("inputPeso").readOnly = soLeitura;
-    document.getElementById("inputCaixa").readOnly = soLeitura;
-    document.getElementById("inputPreco").readOnly = soLeitura;
-    document.getElementById("inputData").readOnly = soLeitura;
+    document.getElementById("inputBi1").readOnly = soLeitura;
+    document.getElementById("inputBi2").readOnly = soLeitura;
+    document.getElementById("inputBi3").readOnly = soLeitura;
+    document.getElementById("inputBi4").readOnly = soLeitura;
 }
-
-
-
 
 // Função para deixar visível ou invisível os botões
 function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSalvar) {
@@ -227,6 +224,26 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
 }
 
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaProduto);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaAluno);
 }
+
+
+function salvarListaNoLocalStorage() {
+    localStorage.setItem("listaAluno", JSON.stringify(listaAluno));
+}
+
+function carregarListaDoLocalStorage() {
+    const listaSalva = localStorage.getItem("listaAluno");
+    if (listaSalva) {
+        listaAluno = JSON.parse(listaSalva); // Converte a string JSON de volta para um array
+    } else {
+        inserirDados(); // Cria a lista inicial caso não exista no Local Storage
+    }
+}
+window.onload = function() {
+    carregarListaDoLocalStorage(); // Carrega os dados do Local Storage ao carregar a página
+    listar(); // Atualiza a interface com os dados carregados
+};
+
+
 
